@@ -20,7 +20,7 @@ app.use(cors());
 app.use(express.json());
 
 mongoose.set('strictQuery', true);
-mongoose.connect(process.env.MONGO_URL) .then(() => console.log("DB connection Successful!!!")).catch((err) => {        console.log(err)});
+mongoose.connect(process.env.MONGO_URL).then(() => console.log("DB connection Successful!!!")).catch((err) => { console.log(err) });
 
 
 

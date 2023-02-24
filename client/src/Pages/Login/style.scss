@@ -1,22 +1,19 @@
-i {
-    color: gray;
-}
 
 .loginPage {
     width: 100%;
     height: 100vh;
-    background-color: wheat;
+
     background-image: url('https://static.wixstatic.com/media/d7323f_c8cd1e91725a481a9027267bba73b6ad~mv2.jpg/v1/fill/w_1899,h_401,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/d7323f_c8cd1e91725a481a9027267bba73b6ad~mv2.jpg');
-    background-position: center;
     background-attachment: fixed;
-    background-size: cover;
-    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
 
+
+
     .loginMain {
+        z-index: 1;
         margin-top: 80px;
         width: 350px;
         min-height: 450px;
@@ -47,7 +44,7 @@ i {
                 #havenotaccount {
                     color: #85a9c9;
                 }
-                
+
 
                 .login_usrname_password {
                     margin-top: 10px;
@@ -63,7 +60,11 @@ i {
                         height: 10vh;
                         justify-content: space-between;
 
-                        label{
+                        i {
+                            color: black;
+                        }
+
+                        label {
                             font-size: 20px;
                             color: black;
                         }

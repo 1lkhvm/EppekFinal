@@ -31,7 +31,7 @@ router.post("/login", async (req, res) => {
     let { username, password } = req.body
 
     let user = await User.findOne({ username: username })
-    if (!user) {
+    if (!user) {    
         return res.status(401).json({ message: "User Not found" })
     }
 
