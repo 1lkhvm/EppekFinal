@@ -1,4 +1,4 @@
-import React  , {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import Login from '.'
 import Footer from '../../Layouts/Footer'
 import Navbar from '../../Layouts/Navbar'
@@ -7,14 +7,14 @@ import { Formik, Field, Form } from 'formik';
 import * as Yup from 'yup';
 import './style.scss'
 import axios from 'axios';
-import { Link , useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 
 
 
 export default function Index() {
-    let navigate  = useNavigate()
+	let navigate = useNavigate()
 	function handleClick(values) {
 		axios.post('http://localhost:5000/api/auth/register', {
 			username: values.username,
@@ -51,24 +51,24 @@ export default function Index() {
 						onSubmit={handleClick} >
 						{({ errors, touched }) => (
 							<div className='formDiv'>
-								<h2 id='loginH2'>Giriş Yap</h2>
+								<h2 id='loginH2'>Register</h2>
 								<Form>
-									<div className='login_usrname_password'>
+									<div className='login_usrname_password1'>
 
-										<div id='username'>
+										<div id='loginDiv'>
 											<span> Username </span>
 											<Field className={`inp ${errors.username && touched.username && "errorInp"}`} name="username" type="text" />
 
 										</div>
 
-										<div id='email'>
+										<div id='loginDiv'>
 											<span> Email </span>
 											<Field className={`inp ${errors.email && touched.email && "errorInp"}`} name="email" type="text" />
 										</div>
 
-										<div id='password'>
+										<div id='loginDiv'>
 											<span> Password </span>
-											<Field className={`inp ${errors.password && touched.password && "errorInp"}`} name="password" type="text" />
+											<Field className={`inp ${errors.password && touched.password && "errorInp"}`} name="password" type="password" />
 										</div>
 
 
@@ -77,8 +77,8 @@ export default function Index() {
 
 									</div>
 
-									<Link id='havenotaccount' to={'/register'}>Hesabın yok mu ?</Link>
-									<button id='submitbtn' type="submit">Giriş Yap</button>
+									<Link id='havenotaccount' to={'/login'}>Log In</Link>
+									<button className='button-86' type="submit">Giriş Yap</button>
 								</Form>
 							</div>
 						)}

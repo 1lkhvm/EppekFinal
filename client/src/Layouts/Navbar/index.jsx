@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, } from "react-router-dom";
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
+
+
 import './style.scss'
 
 const Navbar = () => {
@@ -43,14 +43,17 @@ const Navbar = () => {
                   <Link className='nav-listing-mobile' to={`/`}>Home</Link>
                </li>
                <li>
-                  <Link className='nav-listing-mobile' to={`/Shop-Kargo`}>Shop</Link>
+                  <Link className='nav-listing-mobile' to={`/Shop=`}>Shop</Link>
 
                </li>
                <li>
-                  <Link className='nav-listing-mobile' to={`/Mill`}>Değirmen</Link>
+                  <Link className='nav-listing-mobile' to={`/Mill`}>Mill</Link>
                </li>
                <li>
-                  <Link className='nav-listing-mobile' to={`/Contact`}>İletişim</Link>
+                  <Link className='nav-listing-mobile' to={`/Contact`}>Contact</Link>
+               </li>
+               <li>
+                  <Link className='nav-listing-mobile' to={`/Wishlist`}>Wishlist</Link>
                </li>
 
 
@@ -67,15 +70,29 @@ const Navbar = () => {
             <div className="navbar-menu">
                <ul>
                   <li>
-                     <Link className='nav-listing' to={`/Shop-Kargo`}>Shop</Link>
+                     <div class="dropdown">
+                        <button class="dropbtn" to={`/Shop`}>Shop</button>
+                        <div class="dropdown-content">
+                           <Link className='navadmining' to={"/Bread"} >Bread</Link>
+                           <Link className='navadmining' to={"/Shop"} >Tea</Link>
+                           <Link className='navadmining' to={"/Pasta"} >Pasta</Link>
+                           <Link className='navadmining' to={"/Farm"} >Farm</Link>
+                           <Link className='navadmining' to={"/Cake"} >Cake</Link>
+                        </div>
+                     </div>
 
                   </li>
                   <li>
-                     <Link className='nav-listing' to={`/Mill`}>Değirmen</Link>
+                     <Link className='nav-listing' to={`/Mill`}>Mill</Link>
                   </li>
                   <li>
-                     <Link className='nav-listing' to={`/Contact`}>İletişim</Link>
+                     <Link className='nav-listing' to={`/Contact`}>Contact</Link>
                   </li>
+                  <li>
+                     <Link className='nav-listing' to={`/Wishlist`}>Wishlist</Link>
+                  </li>
+
+
                </ul>
             </div>
             <div className="eppek-logo">
@@ -91,19 +108,20 @@ const Navbar = () => {
                   {localStorage.getItem("username") ?
                      <>
                         <div class="dropdown">
-                           <button class="dropbtn" >{localStorage.getItem("username")}</button>
+                           <button class="dropbtn" >
+                              <p>{localStorage.getItem("username")}</p></button>
                            <div class="dropdown-content">
                               <Link to="/profle">Profile</Link>
-                              <Link to="/logout"> Logout</Link>
-                              {localStorage.getItem("isAdmin") ?
+                              {localStorage.getItem("username" === "1lkhvm") ?
                                  <>
                                     <Link to="/adminPanel@#YSUY@YG@!%DFS!*">Admin</Link>
                                  </>
                                  :
                                  <>
-                                    <Link to="/*">Admin</Link>
+                                    <Link to="/adminpanel">Admin</Link>
                                  </>
                               }
+                              <Link to="/logout"> Logout</Link>
 
                            </div>
                         </div>
@@ -112,6 +130,7 @@ const Navbar = () => {
                      :
                      <Link className='nav-logining' to={`/Login`}>
                         <i className='fa-solid fa-circle-user'></i>
+                        <span>LogIn</span>
 
                      </Link>
                   }

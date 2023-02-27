@@ -1,0 +1,105 @@
+.adminnavcon {
+    width: 100%;
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    justify-content: space-around;
+
+
+    .adminnav {
+        height: 10vh;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+
+        .adminmenu {
+            width: 50%;
+            display: flex;
+            justify-content: flex-start;
+
+            ul {
+                display: flex;
+                gap: 20px;
+
+                li {
+                    display: flex;
+                    align-items: center;
+
+                    .dropbtn {
+                        background-color: #000000;
+                        color: white;
+                        padding: 16px;
+                        font-size: 16px;
+                        border: none;
+                    }
+
+                    .dropdown {
+                        position: relative;
+                        display: inline-block;
+                    }
+
+                    .dropdown-content {
+                        display: none;
+                        position: absolute;
+                        background-color: #f1f1f1;
+                        min-width: 160px;
+                        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                        z-index: 1;
+                    }
+
+                    .dropdown-content a {
+                        color: black;
+                        padding: 12px 16px;
+                        text-decoration: none;
+                        display: block;
+                    }
+
+                    .dropdown-content a:hover {
+                        background-color: #ddd;
+                    }
+
+                    .dropdown:hover .dropdown-content {
+                        display: block;
+                    }
+
+                    .dropdown:hover .dropbtn {
+                        background-color: #000000;
+                    }
+
+                    list-style: none;
+                    display: flex;
+                    gap: 20px;
+
+                    .navadmining {
+                        text-decoration: none;
+                        color: white;
+                        gap: 20px;
+                    }
+                }
+            }
+        }
+
+        .adminprofile {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+
+            .logouting {
+                font-size: 20px;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                color: white;
+                text-decoration: none;
+            }
+            .logouting:hover{
+                color: red;
+            }
+
+            img {
+                border-radius: 50%;
+                width: 40px;
+                display: flex;
+            }
+        }
+    }
+}

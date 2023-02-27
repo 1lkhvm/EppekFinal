@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from   'axios'
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import './style.scss'
@@ -22,11 +23,8 @@ function ContactSection1() {
 
                                 email: Yup.string().email('Invalid email address').required('Required'),
                             })}
-                            onSubmit={(values, { setSubmitting }) => {
-                                setTimeout(() => {
-                                    alert(JSON.stringify(values, null, 2));
-                                    setSubmitting(false);
-                                }, 400);
+                            onSubmit={(values) => {
+                                axios.post("http://localhost:5000/api/message",values).then(values=' ')
                             }}
                         >
                             <Form>
@@ -73,8 +71,11 @@ function ContactSection1() {
                 </div>
 
                 <div className='google-maps-text'>
-                    <div className='google-maps'>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.951648791215!2d29.03738405113601!3d40.98253957920172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab87bfa3a66e9%3A0x4431b038c9992e18!2seppek!5e0!3m2!1str!2saz!4v1677067211287!5m2!1str!2saz" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div class="mapouter">
+                        <div class="gmap_canvas">
+                            <iframe width="100%" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=Baku&t=&z=10&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                            </iframe>
+                        </div>
                     </div>
                     <div className='maps-text'>
                         <h2>Fenerbahçe, Itri Dede Sokağı No:22

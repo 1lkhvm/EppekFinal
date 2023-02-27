@@ -2,14 +2,14 @@ const router = require("express").Router();
 const User = require("../models/User");
 const CryptoJS = require("crypto-js");
 const jwt = require("jsonwebtoken");
-const bcrypt = require("bcrypt")
+const bcrypt = require("bcrypt");
 //REGISTER
 
 
 
 router.post("/register", async (req, res) => {
     let { username, email, password } = req.body
-    console.log("register",username,email,password)
+    console.log("register", username, email, password)
     username = username.toLowerCase()
     let hashedPassword = await bcrypt.hash(password, 10)
     let user = new User({
@@ -19,19 +19,23 @@ router.post("/register", async (req, res) => {
         isAdmin: false,
     })
     let result = await user.save()
-    if (!result){
-        return res.status(500).json({message : "Error could not register"})
+    if (!result) {
+        return res.status(500).json({ message: "Error could not register" })
     }
     let token = jwt.sign({ user_id: user._id, username: username, isAdmin: user.isAdmin, }, process.env.JWT_SEC, { expiresIn: "3d" });
     res.status(200).json({ token: token, username: username })
 
 })
 
+
+
+
+
 router.post("/login", async (req, res) => {
     let { username, password } = req.body
 
     let user = await User.findOne({ username: username })
-    if (!user) {    
+    if (!user) {
         return res.status(401).json({ message: "User Not found" })
     }
 
@@ -43,7 +47,7 @@ router.post("/login", async (req, res) => {
 
     let token = jwt.sign({ user_id: user._id, username: user.username, isAdmin: user.isAdmin, }, process.env.JWT_SEC, { expiresIn: "3d" });
 
-    res.json({token : token , username : username })
+    res.json({ token: token, username: username })
 })
 
 module.exports = router;

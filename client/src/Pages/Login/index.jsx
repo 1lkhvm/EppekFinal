@@ -58,8 +58,8 @@ function Login() {
                                  </div>
                               </div>
                               {error && <span style={{ color: "#dd2500" }}>  {error}  </span>}
-                              <Link id='havenotaccount' to={'/register'}>Hesabın yok mu ?</Link>
-                              <button id='submitbtn' type="submit">Giriş Yap</button>
+                              <Link id='havenotaccount' to={'/register'}>Create new Account</Link>
+                              <button className='button-86' type="submit">Giriş Yap</button>
                            </Form>
                         </div>
                      )}

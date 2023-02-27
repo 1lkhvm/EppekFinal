@@ -1,9 +1,12 @@
 import React from 'react'
 import './style.scss'
 import 'animate.css';
+
 function HomeSection1() {
+
     return (
         <>
+            :
             <div className='home-section1-bg'>
                 <div className='home-section-text'>
                     <h2>Çarşamba</h2>
