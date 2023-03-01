@@ -115,7 +115,6 @@ const Navbar = () => {
                            <button class="dropbtn" >
                               <p>{localStorage.getItem("username")}</p></button>
                            <div class="dropdown-content">
-                              <Link to="/profle">Profile</Link>
                               {localStorage.getItem("username" === "1lkhvm") ?
                                  <>
                                     <Link to="/adminPanel@#YSUY@YG@!%DFS!*">Admin</Link>
