@@ -3,6 +3,10 @@ import axios from "axios";
 import ClipLoader from "react-spinners/ClipLoader";
 import './style.scss'
 import { MainContext } from '../../contexts/Main';
+
+
+
+
 function Pasta({category}) {
 	let url ;
 
@@ -18,7 +22,7 @@ function Pasta({category}) {
 		url = 'http://localhost:5000/api/productferma '
 	}
 	
-	const { increase, 	 } = useContext(MainContext)
+	const { increase, addToWishlist , isInWishlist	 } = useContext(MainContext)
 
 
 
@@ -88,8 +92,13 @@ function Pasta({category}) {
 										<div className="card">
 											<div className="card-actions">
 												<h4 className="card-btn-float btn" href="#0_y" title="Add">✔</h4>
-												<h4 className="card-btn-float btn" href="#0_n" title="Add Wishlist">
-													<i className="fa-solid fa-heart"></i>
+												<h4 className="card-btn-float btn" href="#0_n" title="Add Wishlist"
+												 onClick={ () =>  addToWishlist(element) } >
+													{ isInWishlist(element) ?
+													<i class="fa-solid fa-heart"></i> :
+													<i class="fa-regular fa-heart"></i> 
+													
+												}
 												</h4>
 												<h4 className="card-image" href="#0_rm" title="Read more">
 													<img src={element.img} width="480" height="270" alt="" />

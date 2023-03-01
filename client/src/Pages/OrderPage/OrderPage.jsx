@@ -54,9 +54,9 @@ function OrderPage() {
 								<div className='AdminProduct'>
 									<img src={i.img} alt='foto' />
 									<div id='AdminProductsTexts'>
-										<h3 id='AdminProductH3'></h3>
-										<h4 id='AdminProductH4'>$ {i.price} </h4>
-										<h6 id='AdminProductH6'></h6>
+										<h3 id='AdminProductH3'> {i.title} </h3>
+										<h4 id='AdminProductH4'> {i.description} </h4>
+										<h6 id='AdminProductH6'> Price of one :  $ {i.price} </h6>
 									</div>
 									<div class="center container">
 										<div class="button col col-1">

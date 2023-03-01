@@ -6,12 +6,20 @@ export const MainContext = createContext()
 
 export default function Provider({ children }) {
 	const [basket, setBasket] = useState([])
-	const [wishlist,setWishlist] = useState([])
+	const [wishlist, setWishlist] = useState([])
 	useEffect(() => {
 
-		if (typeof JSON.parse(localStorage.basket) == "object") {
-			setBasket(JSON.parse(localStorage.basket)  )
+		if (localStorage.basket && typeof JSON.parse(localStorage.basket) == "object") {
+			setBasket(JSON.parse(localStorage.basket))
 		}
+		console.log('oo')
+
+		if (localStorage.wishlist && typeof JSON.parse(localStorage.wishlist) == "object") {
+			setWishlist(JSON.parse(localStorage.wishlist))
+		} else {
+
+		}
+
 	}, [])
 
 
@@ -61,30 +69,53 @@ export default function Provider({ children }) {
 	}
 
 
-	function remove(item){
-		let arr = basket.filter(x => x._id != item._id   )
-		setBasket( arr)
+	function remove(item) {
+		let arr = basket.filter(x => x._id != item._id)
+		setBasket(arr)
 		localStorage.setItem('basket', JSON.stringify(arr))
 
 	}
 
-	function calculateCount(item){
-		let sum = 0 ;
-		basket.forEach(x => sum += x.count )
+	function calculateCount(item) {
+		let sum = 0;
+		basket.forEach(x => sum += x.count)
 		return sum
 	}
 
 
-	function addToWishlist(item){
-
+	function addToWishlist(item) {
+		let findIndex = wishlist.findIndex(x => x._id == item._id)
+		let arr = [...wishlist]
+		if (findIndex == -1) {
+			arr.push(item)
+			// console.log('w', arr)
+			setWishlist(arr)
+			localStorage.wishlist = JSON.stringify(arr)
+		} else {
+			let arr_ = wishlist.filter(x => x._id != item._id)
+			localStorage.wishlist = JSON.stringify(arr_)
+			setWishlist(arr_)
+		}
 	}
 
-	function removeFromWishlist(item){
+	function removeFromWishlist(item) {
+		let arr = wishlist.filter(x => x._id != item._id)
+		setWishlist(arr)
+		localStorage.setItem('wishlist', JSON.stringify(arr))
+	}
 
+	function isInWishlist(item) {
+		let index = wishlist.findIndex(x => x._id == item._id)
+		// console.log('i', index)
+		if (index > -1) {
+			return true
+		} else {
+			return false
+		}
 	}
 
 	return (
-		<MainContext.Provider value={{ basket, setBasket, increase, decrease , remove , calculateCount }}  >
+		<MainContext.Provider value={{ wishlist, basket, setBasket, increase, decrease, remove, calculateCount, addToWishlist, removeFromWishlist, isInWishlist }}  >
 			{children}
 		</MainContext.Provider>
 	)

@@ -110,7 +110,7 @@ const Navbar = () => {
                <div className='nav-login'>
 
                   {localStorage.getItem("username") ?
-                     <>
+                     <> 
                         <div class="dropdown">
                            <button class="dropbtn" >
                               <p>{localStorage.getItem("username")}</p></button>
