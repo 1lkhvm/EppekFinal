@@ -1,26 +1,24 @@
 import React, { useEffect, useState } from 'react'
 import { Formik, Field, Form, } from 'formik';
-
 import * as Yup from 'yup';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
-import '../EDITADMINBREAD/style.scss'
-
-function Admineditmill() {
+import ADMINNAVBAR from '../../ADMINNAVBAR';
+function PRODUCTADD_CAKE() {
     let { id } = useParams();
     const [post, setPost] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/mill/find/${id}`).then((response) => {
+        axios.get(`http://localhost:5000/api/productcake`).then((response) => {
             setPost(response.data);
         });
     }, []);
-    let navigate = useNavigate()
 
+    let navigate = useNavigate()
 
     return (
         <>
-
+            <ADMINNAVBAR />
             <div className='addProduct'>
 
                 <div className='form-main'>
@@ -36,7 +34,7 @@ function Admineditmill() {
                             price: Yup.number().required('Price is required'),
                         })}
                         onSubmit={(values) => {
-                            axios.put(`http://localhost:5000/api/mill/${post._id}`, {
+                            axios.post(`http://localhost:5000/api/productcake`, {
                                 title: values.title,
                                 description: values.description,
                                 img: values.img,
@@ -44,7 +42,7 @@ function Admineditmill() {
                                 weight: values.weight,
                                 price: values.price
                             })
-                            navigate("/product_mill_admin_panel")
+                            navigate("/product_cake_admin_panel")
                         }}
                     >
                         <Form>
@@ -109,4 +107,4 @@ function Admineditmill() {
     )
 }
 
-export default Admineditmill
+export default PRODUCTADD_CAKE

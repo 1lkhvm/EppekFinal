@@ -24,12 +24,12 @@ function ADMINNAVBAR() {
                             <div class="dropdown">
                                 <button class="dropbtn">Add Product</button>
                                 <div class="dropdown-content">
-                                    <Link to={"/product_tea_admin_panel"} className='navadmining'>Tea</Link>
-                                    <Link to={"/product_bread_admin_panel"} className='navadmining'>Bread</Link>
-                                    <Link to={"/product_pasta_admin_panel"} className='navadmining'>Pasta</Link>
-                                    <Link to={"/product_farm_admin_panel"} className='navadmining'>Farm</Link>
-                                    <Link to={"/product_cake_admin_panel"} className='navadmining'>Cake</Link>
-                                    <Link to={"/product_mill_admin_panel"} className='navadmining'>Mill</Link>
+                                    <Link to={"/addproduct_tea"} className='navadmining'>Tea</Link>
+                                    <Link to={"/addproduct_bread"} className='navadmining'>Bread</Link>
+                                    <Link to={"/addproduct_pasta"} className='navadmining'>Pasta</Link>
+                                    <Link to={"/addproduct_farm"} className='navadmining'>Farm</Link>
+                                    <Link to={"/addproduct_cake"} className='navadmining'>Cake</Link>
+                                    <Link to={"/addproduct_mill"} className='navadmining'>Mill</Link>
                                 </div>
                             </div>
                             <Link to={"/adminpanel"} className='navadmining'>Users</Link>

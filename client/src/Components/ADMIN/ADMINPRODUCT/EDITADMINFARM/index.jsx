@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Formik, Field, Form, } from 'formik';
-import './style.scss'
+import '../EDITADMINBREAD/style.scss'
+
 import * as Yup from 'yup';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 function Admineditfarm() {
     let { id } = useParams();
@@ -13,6 +14,7 @@ function Admineditfarm() {
             setPost(response.data);
         });
     }, []);
+    let navigate = useNavigate()
 
 
     return (
@@ -41,7 +43,7 @@ function Admineditfarm() {
                                 weight: values.weight,
                                 price: values.price
                             })
-
+                            navigate("/product_farm_admin_panel")
                         }}
                     >
                         <Form>

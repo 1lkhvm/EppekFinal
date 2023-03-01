@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Formik, Field, Form, } from 'formik';
-import './style.scss'
+import '../EDITADMINBREAD/style.scss'
+
 import * as Yup from 'yup';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 function Admineditbread() {
     let { id } = useParams();
@@ -14,7 +15,7 @@ function Admineditbread() {
         });
     }, []);
 
-
+    let navigate = useNavigate()
     return (
         <>
 
@@ -41,7 +42,7 @@ function Admineditbread() {
                                 weight: values.weight,
                                 price: values.price
                             })
-
+                            navigate("/product_cake_admin_panel")
                         }}
                     >
                         <Form>

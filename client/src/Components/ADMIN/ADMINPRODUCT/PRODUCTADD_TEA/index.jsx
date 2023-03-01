@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { Formik, Field, Form, } from 'formik';
-
 import * as Yup from 'yup';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
-import '../EDITADMINBREAD/style.scss'
-
-function Admineditmill() {
+import ADMINNAVBAR from '../../ADMINNAVBAR';
+function PRODUCTADD_TEA() {
     let { id } = useParams();
     const [post, setPost] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/mill/find/${id}`).then((response) => {
+        axios.get(`http://localhost:5000/api/productbreakfast`).then((response) => {
             setPost(response.data);
         });
     }, []);
@@ -20,7 +18,7 @@ function Admineditmill() {
 
     return (
         <>
-
+            <ADMINNAVBAR />
             <div className='addProduct'>
 
                 <div className='form-main'>
@@ -36,7 +34,7 @@ function Admineditmill() {
                             price: Yup.number().required('Price is required'),
                         })}
                         onSubmit={(values) => {
-                            axios.put(`http://localhost:5000/api/mill/${post._id}`, {
+                            axios.post(`http://localhost:5000/api/productbreakfast`, {
                                 title: values.title,
                                 description: values.description,
                                 img: values.img,
@@ -44,7 +42,7 @@ function Admineditmill() {
                                 weight: values.weight,
                                 price: values.price
                             })
-                            navigate("/product_mill_admin_panel")
+                            navigate("/product_tea_admin_panel")
                         }}
                     >
                         <Form>
@@ -53,36 +51,36 @@ function Admineditmill() {
                                 <div className='form__group field'>
 
                                     <Field className="form__field" name="title" type="text" placeholder={post.title} />
-                                    <label for="Title" class="form__label">Title</label>
+                                    <label for="Title" class="form__label">Tea:Title</label>
                                 </div>
                                 <div className='form__group'>
 
                                     <Field className="form__field" name="description" type="text" placeholder={post.description} />
-                                    <label for="description" class="form__label">Description</label>
+                                    <label for="description" class="form__label">Tea:Description</label>
                                 </div>
                                 <div className='form__group '>
 
                                     <Field className="form__field" name="img" type="text" placeholder={post.img} />
 
-                                    <label for="img" class="form__label">Img</label>
+                                    <label for="img" class="form__label">Tea:Img</label>
                                 </div>
                                 <div className='form__group '>
 
                                     <Field className="form__field" name="categories" type="text" placeholder={post.categories} />
 
-                                    <label for="name" class="form__label">Categories</label>
+                                    <label for="name" class="form__label">Tea:Categories</label>
                                 </div>
                                 <div className='form__group '>
 
                                     <Field className="form__field" name="weight" type="text" placeholder={post.weight} />
 
-                                    <label for="name" class="form__label">Weight</label>
+                                    <label for="name" class="form__label">Tea:Weight</label>
                                 </div>
                                 <div className='form__group '>
 
                                     <Field className="form__field" name="price" type="text" placeholder={post.price} />
 
-                                    <label for="name" class="form__label">Price</label>
+                                    <label for="name" class="form__label">Tea:Price</label>
                                 </div>
 
                             </div>
@@ -109,4 +107,4 @@ function Admineditmill() {
     )
 }
 
-export default Admineditmill
+export default PRODUCTADD_TEA

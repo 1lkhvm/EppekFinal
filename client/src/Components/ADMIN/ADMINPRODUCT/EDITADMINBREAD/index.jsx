@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Formik, Field, Form, } from 'formik';
 import './style.scss'
 import * as Yup from 'yup';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 function Admineditbread() {
     let { id } = useParams();
@@ -13,6 +13,7 @@ function Admineditbread() {
             setPost(response.data);
         });
     }, []);
+    let navigate = useNavigate()
 
 
     return (
@@ -41,6 +42,7 @@ function Admineditbread() {
                                 weight: values.weight,
                                 price: values.price
                             })
+                            navigate("/product_bread_admin_panel")
 
                         }}
                     >
@@ -54,7 +56,7 @@ function Admineditbread() {
                                 </div>
                                 <div className='form__group'>
 
-                                    <Field className="form__field" name="description" type="text" placeholder={post.description} />
+                                    <Field className="form__field" name="description" type="text"  placeholder={post.description} />
                                     <label for="description" class="form__label">Description</label>
                                 </div>
                                 <div className='form__group '>

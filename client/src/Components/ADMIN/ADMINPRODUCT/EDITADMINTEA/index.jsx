@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Formik, Field, Form, } from 'formik';
-import './style.scss'
+import '../EDITADMINBREAD/style.scss'
+
 import * as Yup from 'yup';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 function Adminedittea() {
     let { id } = useParams();
@@ -13,11 +14,12 @@ function Adminedittea() {
             setPost(response.data);
         });
     }, []);
+    let navigate = useNavigate()
 
 
     return (
         <>
-         
+
             <div className='addProduct'>
 
                 <div className='form-main'>
@@ -41,6 +43,7 @@ function Adminedittea() {
                                 weight: values.weight,
                                 price: values.price
                             })
+                            navigate("/product_tea_admin_panel")
 
                         }}
                     >
@@ -60,25 +63,25 @@ function Adminedittea() {
                                 <div className='form__group '>
 
                                     <Field className="form__field" name="img" type="text" placeholder={post.img} />
-                                   
+
                                     <label for="img" class="form__label">Img</label>
                                 </div>
                                 <div className='form__group '>
-                                    
+
                                     <Field className="form__field" name="categories" type="text" placeholder={post.categories} />
-                                    
+
                                     <label for="name" class="form__label">Categories</label>
                                 </div>
                                 <div className='form__group '>
-                                   
+
                                     <Field className="form__field" name="weight" type="text" placeholder={post.weight} />
-                                    
+
                                     <label for="name" class="form__label">Weight</label>
                                 </div>
                                 <div className='form__group '>
-                                   
+
                                     <Field className="form__field" name="price" type="text" placeholder={post.price} />
-                                   
+
                                     <label for="name" class="form__label">Price</label>
                                 </div>
 
@@ -86,7 +89,7 @@ function Adminedittea() {
 
 
 
-                            
+
                             <div className='button'>
                                 <button className='button-64' type="submit">Submit</button>
                             </div>

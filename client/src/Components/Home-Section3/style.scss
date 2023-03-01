@@ -1,3 +1,8 @@
+* {
+    font-family: monospace;
+
+}
+
 .home-section3-bg {
     background-image: url("https://static.wixstatic.com/media/d7323f_a81977b3dd8f477e87d610727057ace2~mv2.png/v1/fill/w_1519,h_746,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/d7323f_a81977b3dd8f477e87d610727057ace2~mv2.png");
     width: 100%;
@@ -16,7 +21,7 @@
 
     @import url("https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@400;600;700&display=swap");
 
-    $blue: #000000;
+    $blue: #ffffff;
 
 
 
@@ -25,10 +30,9 @@
 
 
     h1 {
-        background-color: rgba(255, 255, 255, 0.127);
-        font-family: "Alumni Sans", sans-serif;
+        color: #110c0c;
         font-size: 2.5em;
-        text-decoration: underline;
+        font-family: monospace;
 
         @media (max-width: 768px) {
             font-size: 1.3em;
@@ -40,7 +44,7 @@
         text-transform: uppercase;
         color: transparent;
         -webkit-text-stroke: #000000;
-        color: #000000;
+        color: #ffffff;
         -webkit-text-stroke-width: 1px;
         text-shadow: 2px 2px 10px $blue;
         transition: all 0.6s ease-in-out;
@@ -71,7 +75,8 @@
         }
     }
 }
-p{
+
+p {
     font-size: 50px;
     font-family: 'Times New Roman', Times, serif;
     margin-block-start: 0em;

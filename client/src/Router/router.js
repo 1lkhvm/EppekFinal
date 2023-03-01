@@ -33,12 +33,23 @@ import Admin_product_pasta_page from "../Pages/ADMINPRODUCTPAGE/ADMINPRODUCT_PAS
 import Admin_product_cake_page from "../Pages/ADMINPRODUCTPAGE/ADMINPRODUCT_CAKE_PAGE";
 import Admin_product_tea_page from "../Pages/ADMINPRODUCTPAGE/ADMINPRODUCT_TEA_PAGE";
 import Admin_product_mill_page from "../Pages/ADMINPRODUCTPAGE/ADMINPRODUCT_MILL_PAGE";
-
+import PRODUCTADD_BREAD from "../Components/ADMIN/ADMINPRODUCT/PRODUCTADD_BREAD";
+import PRODUCTADD_MILL from "../Components/ADMIN/ADMINPRODUCT/PRODUCTADD_MILL";
+import PRODUCTADD_FARM from "../Components/ADMIN/ADMINPRODUCT/PRODUCTADD_FARM";
+import PRODUCTADD_TEA from "../Components/ADMIN/ADMINPRODUCT/PRODUCTADD_TEA";
+import PRODUCTADD_CAKE from "../Components/ADMIN/ADMINPRODUCT/PRODUCTADD_CAKE";
+import PRODUCTADD_PASTA from "../Components/ADMIN/ADMINPRODUCT/PRODUCTADD_PASTA";
+import OrderPage from "../Pages/OrderPage/OrderPage";
+import Products from '../Pages/Products/index'
 
 
 
 
 const router = createBrowserRouter([
+    {
+        path : 'products/:category',
+        element : <Products />
+    },
     {
         path: "/",
         element: <Home />,
@@ -129,9 +140,38 @@ const router = createBrowserRouter([
         element: <Admin_product_farm_page />
     },
 
+    //////////////////////post///////////////////////////////
+
+    {
+        path: '/addproduct_bread',
+        element: <PRODUCTADD_BREAD />
+    },
 
 
+    {
+        path: '/addproduct_mill',
+        element: <PRODUCTADD_MILL />
+    },
 
+    {
+        path: '/addproduct_pasta',
+        element: <PRODUCTADD_PASTA />
+    },
+
+    {
+        path: '/addproduct_cake',
+        element: <PRODUCTADD_CAKE />
+    },
+
+    {
+        path: '/addproduct_tea',
+        element: <PRODUCTADD_TEA />
+    },
+
+    {
+        path: '/addproduct_farm',
+        element: <PRODUCTADD_FARM />
+    },
 
 
 
@@ -167,6 +207,17 @@ const router = createBrowserRouter([
         path: '/product_tea_admin_panel/:id',
         element: <Admin_product_edittea />
     },
+
+    /////////////////////////////////////////////////
+    {
+        path: '/orders',
+        element: <OrderPage/>
+    },
+
+   
+
+
+
 
 
 ]);

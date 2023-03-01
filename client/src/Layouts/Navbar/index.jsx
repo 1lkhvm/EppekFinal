@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, } from "react-router-dom";
+import { MainContext } from "../../contexts/Main";
 
 
 import './style.scss'
@@ -9,6 +10,9 @@ const Navbar = () => {
    const [burger_class, setBurgerClass] = useState("burger-bar unclicked")
    const [menu_class, setMenuClass] = useState("menu hidden")
    const [isMenuClicked, setIsMenuClicked] = useState(false)
+
+   const { calculateCount  } = useContext(MainContext)
+
    const updateMenu = () => {
       if (!isMenuClicked) {
          setBurgerClass("burger-bar clicked")
@@ -73,11 +77,11 @@ const Navbar = () => {
                      <div class="dropdown">
                         <button class="dropbtn" to={`/Shop`}>Shop</button>
                         <div class="dropdown-content">
-                           <Link className='navadmining' to={"/Bread"} >Bread</Link>
-                           <Link className='navadmining' to={"/Shop"} >Tea</Link>
-                           <Link className='navadmining' to={"/Pasta"} >Pasta</Link>
-                           <Link className='navadmining' to={"/Farm"} >Farm</Link>
-                           <Link className='navadmining' to={"/Cake"} >Cake</Link>
+                           <Link  reloadDocument className='navadmining' to={"/products/bread"} >Bread</Link>
+                           <Link reloadDocument className='navadmining' to={"/products/tea"} >Tea</Link>
+                           <Link  reloadDocument className='navadmining' to={"/products/pasta"} >Pasta</Link>
+                           <Link  reloadDocument className='navadmining' to={"/products/farm"} >Farm</Link>
+                           <Link reloadDocument className='navadmining' to={"/products/cake"} >Cake</Link>
                         </div>
                      </div>
 
@@ -149,7 +153,12 @@ const Navbar = () => {
                </div>
 
                <div className='nav-shop-basket' >
-                  <i className="fa-solid fa-store" ></i>
+                  <Link to={"/orders"}><i className="fa-solid fa-store" >
+                  {calculateCount()}
+
+                     </i>
+                     </Link>
+
                </div>
 
             </div>

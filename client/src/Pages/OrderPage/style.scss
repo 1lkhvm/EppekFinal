@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+}
+
+.AdminPanelProducts {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .AdminPanelProductsMain {
+        margin-top: 90px;
+        width: 90%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+        // use only the available space inside the 400x400 frame
+
+
+
+
+        .container {
+            display: flex;
+            border: 4px solid #ffffff;
+            background: #1b140c;
+            border-radius: 10rem;
+            width: 16vh;
+            height: 6vh;
+            padding: 1rem;
+            align-content: center;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        h1 {
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            color: white;
+        }
+
+        .col-1 {
+            width: 45%;
+        }
+
+        .col-2 {
+            width: 25%;
+        }
+
+        .col>button,
+        .number {
+            width: 100%;
+            background: #1b140c;
+            border: 0px;
+            text-align: center;
+            display: flex;
+        }
+
+        .button {
+            font-family: sans-serif;
+            font-size: 2em;
+        }
+
+        #plus-btn {
+            color: #ffffff;
+            user-select: none;
+            outline: none;
+        }
+
+        #minus-btn {
+            color: #ffffff;
+            user-select: none;
+            outline: none;
+        }
+
+
+        .AdminProduct {
+            width: 100%;
+
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding-left: 20px;
+
+            img {
+
+                width: 100px;
+                height: 100px;
+            }
+
+            #AdminProductsTexts {
+                display: flex;
+                flex-direction: column;
+                width: 20%;
+
+                #AdminProductH3 {
+                    margin: 0;
+                    font-weight: 600;
+                }
+
+                #AdminProductH4 {
+                    margin: 0;
+                }
+
+                #AdminProductH6 {
+                    width: 500px;
+                    margin: 0;
+                }
+            }
+
+            button {
+                color: black;
+            }
+        }
+    }
+}

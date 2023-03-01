@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Formik, Field, Form, } from 'formik';
-import './style.scss'
+import '../EDITADMINBREAD/style.scss'
+
 import * as Yup from 'yup';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 function Admineditpasta() {
     let { id } = useParams();
@@ -14,6 +15,7 @@ function Admineditpasta() {
         });
     }, []);
 
+    let navigate = useNavigate()
 
     return (
         <>
@@ -41,6 +43,7 @@ function Admineditpasta() {
                                 weight: values.weight,
                                 price: values.price
                             })
+                            navigate("/product_pasta_admin_panel")
 
                         }}
                     >
