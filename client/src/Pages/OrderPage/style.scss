@@ -121,4 +121,35 @@
             }
         }
     }
+
+    .total {
+        width: 100%;
+        display: flex;
+        gap: 20px;
+        justify-content: flex-end;
+
+
+        div {
+            gap: 20px;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            width: 25vh;
+            border: 1px solid black;
+            margin-top: 20px;
+            margin-bottom: 20px;
+
+            p {
+                font-size: 20px;
+            }
+
+            button {
+                width: 20vh;
+                height: 5vh;
+                color: rgb(255, 255, 255);
+                background-color: #1b140c;
+                cursor: pointer;
+            }
+        }
+    }
 }

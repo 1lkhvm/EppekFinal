@@ -25,7 +25,7 @@ function OrderPage() {
 	// });
 
 
-	const { increase, decrease, remove , basket } = useContext(MainContext)
+	const { increase, decrease, remove, basket } = useContext(MainContext)
 
 
 	return (
@@ -69,26 +69,27 @@ function OrderPage() {
 											<button id="plus-btn" onClick={() => increase(i)} > + </button>
 										</div>
 									</div>
-									<button onClick={ () => remove(i) }  >X</button>
+									<button onClick={() => remove(i)}  >X</button>
 								</div>
 							)
 						})
 					}
-
+					<div className='total'>
 						{
 							(() => {
 								let sum = 0
 								for (let x of basket) {
 									sum = x.count * x.price
 								}
-								return <div style={{marginTop: "20px"   }} >
-									<p  >  	 {sum.toFixed(2) } AZN  +  {(sum * 0.35).toFixed(2)} Catdirilma  </p>
-									<p  >  	Total { (1.35*sum).toFixed(2) }   </p>
+								return <div style={{ marginTop: "20px" }} >
+									<p  >  	 {sum.toFixed(2)} $ +  {(sum * 0.35).toFixed(2)} KDV  </p>
+									<p  >  	Total: {(1.35 * sum).toFixed(2)}   </p>
+									<button className='	button'>Add order</button>
 								</div>
 							})()
 
 						}
-
+					</div>
 
 				</div>
 			</section>
