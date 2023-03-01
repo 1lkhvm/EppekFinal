@@ -312,9 +312,24 @@
     display: flex;
     justify-content: flex-start;
     color: gray;
+
+
     cursor: pointer;
 
+
+    i {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+
+        p {
+            font-size: 20px;
+            text-decoration: none;
+            color: white;
+        }
+    }
 }
+
 
 .eppek-logo {
     width: 25%;
@@ -553,6 +568,10 @@
         font-size: 20px;
         color: gray;
         cursor: pointer;
+
+        i {
+            display: flex !important;
+        }
 
     }
 

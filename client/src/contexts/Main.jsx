@@ -114,8 +114,14 @@ export default function Provider({ children }) {
 		}
 	}
 
+	function clear(){
+		setBasket([])
+		setWishlist([])
+		
+	}
+
 	return (
-		<MainContext.Provider value={{ wishlist, basket, setBasket, increase, decrease, remove, calculateCount, addToWishlist, removeFromWishlist, isInWishlist }}  >
+		<MainContext.Provider value={{ wishlist, basket, setBasket, increase, decrease, remove, calculateCount, addToWishlist, removeFromWishlist, isInWishlist, clear }}  >
 			{children}
 		</MainContext.Provider>
 	)

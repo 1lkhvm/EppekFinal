@@ -11,7 +11,7 @@ const Navbar = () => {
    const [menu_class, setMenuClass] = useState("menu hidden")
    const [isMenuClicked, setIsMenuClicked] = useState(false)
 
-   const { calculateCount  } = useContext(MainContext)
+   const { calculateCount } = useContext(MainContext)
 
    const updateMenu = () => {
       if (!isMenuClicked) {
@@ -77,10 +77,10 @@ const Navbar = () => {
                      <div class="dropdown">
                         <button class="dropbtn" to={`/Shop`}>Shop</button>
                         <div class="dropdown-content">
-                           <Link  reloadDocument className='navadmining' to={"/products/bread"} >Bread</Link>
+                           <Link reloadDocument className='navadmining' to={"/products/bread"} >Bread</Link>
                            <Link reloadDocument className='navadmining' to={"/products/tea"} >Tea</Link>
-                           <Link  reloadDocument className='navadmining' to={"/products/pasta"} >Pasta</Link>
-                           <Link  reloadDocument className='navadmining' to={"/products/farm"} >Farm</Link>
+                           <Link reloadDocument className='navadmining' to={"/products/pasta"} >Pasta</Link>
+                           <Link reloadDocument className='navadmining' to={"/products/farm"} >Farm</Link>
                            <Link reloadDocument className='navadmining' to={"/products/cake"} >Cake</Link>
                         </div>
                      </div>
@@ -110,7 +110,7 @@ const Navbar = () => {
                <div className='nav-login'>
 
                   {localStorage.getItem("username") ?
-                     <> 
+                     <>
                         <div class="dropdown">
                            <button class="dropbtn" >
                               <p>{localStorage.getItem("username")}</p></button>
@@ -154,10 +154,11 @@ const Navbar = () => {
 
                <div className='nav-shop-basket' >
                   <Link to={"/orders"}><i className="fa-solid fa-store" >
-                  {calculateCount()}
+                     <p> {calculateCount()}</p>
 
-                     </i>
-                     </Link>
+
+                  </i>
+                  </Link>
 
                </div>
 
