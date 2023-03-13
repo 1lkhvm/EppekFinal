@@ -42,7 +42,7 @@ function ADMINMESSAGE() {
     return (
         <div class="container">
             <div class="table-responsive">
-                <table class="table">
+                <table class="table1">
                     <thead>
                         <tr>
                             <th scope="col">Firstname</th>

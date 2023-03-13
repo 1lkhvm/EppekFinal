@@ -48,14 +48,14 @@ function AdminBread() {
                         <tr>
                             <th scope="col">_ID</th>
                             <th scope="col">Title</th>
-                            <th scope="col">description</th>
+                            <th scope="col">Description</th>
                             <th scope="col">Img</th>
                             <th scope="col">categories</th>
                             <th scope="col">weight</th>
                             <th scope="col">price</th>
-                            <th scope="col">Edit</th>
+                            <th scope="col">EditProduct</th>
 
-                            <th>DeleteAccount</th>
+                            <th>DeleteProduct</th>
                         </tr>
                     </thead>
                     <tbody>

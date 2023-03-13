@@ -47,8 +47,19 @@ const Navbar = () => {
                   <Link className='nav-listing-mobile' to={`/`}>Home</Link>
                </li>
                <li>
-                  <Link className='nav-listing-mobile' to={`/Shop=`}>Shop</Link>
-
+                  <Link reloadDocument className='nav-listing-mobile' to={"/products/bread"} >Bread</Link>
+               </li>
+               <li>
+                  <Link reloadDocument className='nav-listing-mobile' to={"/products/tea"} >Tea</Link>
+               </li>
+               <li>
+                  <Link reloadDocument className='nav-listing-mobile' to={"/products/pasta"} >Pasta</Link>
+               </li>
+               <li>
+                  <Link reloadDocument className='nav-listing-mobile' to={"/products/farm"} >Farm</Link>
+               </li>
+               <li>
+                  <Link reloadDocument className='nav-listing-mobile' to={"/products/cake"} >Cake</Link>
                </li>
                <li>
                   <Link className='nav-listing-mobile' to={`/Mill`}>Mill</Link>
@@ -59,6 +70,7 @@ const Navbar = () => {
                <li>
                   <Link className='nav-listing-mobile' to={`/Wishlist`}>Wishlist</Link>
                </li>
+
 
 
 
@@ -133,7 +145,8 @@ const Navbar = () => {
                      :
                      <Link className='nav-logining' to={`/Login`}>
                         <i className='fa-solid fa-circle-user'></i>
-                        <span>LogIn</span>
+                        <span> </span>
+                        <h4>Log In</h4>
 
                      </Link>
                   }
@@ -153,10 +166,10 @@ const Navbar = () => {
 
                <div className='nav-shop-basket' >
                   <Link to={"/orders"}><i className="fa-solid fa-store" >
-                     <p> {calculateCount()}</p>
-
-
+                     <h1> {calculateCount()}</h1>
                   </i>
+
+
                   </Link>
 
                </div>

@@ -5,11 +5,23 @@
     flex-direction: column;
     gap: 20px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
+
     align-items: center;
 
+    .table-responsive {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
 
     table {
+        width: 80%;
+        align-items: center;
+
         tbody {
             tr {
                 .noBorderbtn {
@@ -44,25 +56,32 @@ tr:nth-child(even) {
 }
 
 tr:nth-child(odd) {
-    background-color: #423b5b;
+    background-color: #ffffff;
 }
 
 th {
-    background-color: #342F44;
+    background-color: #515056;
     color: white;
-    width: 33vh;
+    width: 13vh;
     box-sizing: border-box;
-    height: 10vh;
+    height: 15vh;
+
+
+
+
+    img {
+        width: 50%;
+    }
 
     p {
-        font-size: 20px;
+        font-size: 10px;
     }
 
 
 
     .button-64 {
         align-items: center;
-        background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+        background-image: linear-gradient(144deg, #AF40FF, #9382ff 50%, #00DDEB);
         border: 0;
         border-radius: 8px;
         box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
@@ -104,16 +123,17 @@ th {
 
     @media (min-width: 768px) {
         .button-64 {
-            font-size: 24px;
-            min-width: 196px;
+            font-size: 18px;
+            min-width: 100px;
         }
     }
 
     .noBorder {
         border: none !important;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
     }
 
     .addProduct {

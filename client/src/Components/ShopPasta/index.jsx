@@ -7,22 +7,25 @@ import { MainContext } from '../../contexts/Main';
 
 
 
-function Pasta({category}) {
-	let url ;
+function Pasta({ category }) {
+	let url;
 
-	if (category == 'pasta' ){
+	if (category == 'pasta') {
 		url = 'http://localhost:5000/api/productpasta'
-	}else if (category == 'cake'){
+	} else if (category == 'cake') {
 		url = 'http://localhost:5000/api/productcake'
-	}else if (category == 'bread'){
+	} else if (category == 'bread') {
 		url = 'http://localhost:5000/api/productsbread'
-	}else if (category == 'tea'){
+	} else if (category == 'tea') {
 		url = 'http://localhost:5000/api/productbreakfast'
-	}else if (category == 'farm'){
+	} else if (category == 'farm') {
 		url = 'http://localhost:5000/api/productferma '
 	}
-	
-	const { increase, addToWishlist , isInWishlist	 } = useContext(MainContext)
+	else if (category == 'FlowerMill') {
+		url = 'http://localhost:5000/api/mill'
+	};
+
+	const { increase, addToWishlist, isInWishlist } = useContext(MainContext)
 
 
 
@@ -93,12 +96,12 @@ function Pasta({category}) {
 											<div className="card-actions">
 												<h4 className="card-btn-float btn" href="#0_y" title="Add">✔</h4>
 												<h4 className="card-btn-float btn" href="#0_n" title="Add Wishlist"
-												 onClick={ () =>  addToWishlist(element) } >
-													{ isInWishlist(element) ?
-													<i class="fa-solid fa-heart"></i> :
-													<i class="fa-regular fa-heart"></i> 
-													
-												}
+													onClick={() => addToWishlist(element)} >
+													{isInWishlist(element) ?
+														<i class="fa-solid fa-heart"></i> :
+														<i class="fa-regular fa-heart"></i>
+
+													}
 												</h4>
 												<h4 className="card-image" href="#0_rm" title="Read more">
 													<img src={element.img} width="480" height="270" alt="" />

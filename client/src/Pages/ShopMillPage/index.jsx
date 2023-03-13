@@ -8,6 +8,7 @@ import MillSection2 from '../../Components/ShopMill-Section2'
 
 
 
+
 function ShopMillPage() {
     return (
         <>

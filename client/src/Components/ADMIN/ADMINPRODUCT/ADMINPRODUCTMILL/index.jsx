@@ -1,7 +1,9 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Link, } from "react-router-dom";
-import "./style.scss"
+import '../ADMINPRODUCTBREAD/style.scss';
+
+
 function AdminMill() {
     const [post, setPost] = useState([]);
     const [stats, setStats] = useState([])

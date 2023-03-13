@@ -1,0 +1,375 @@
+* {
+  box-sizing: border-box;
+}
+
+.AdminPanelProducts1 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .AdminPanelProductsMain1 {
+    margin-top: 90px;
+    width: 90%;
+    margin-bottom: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+    // use only the available space inside the 400x400 frame
+
+
+
+
+    .container1 {
+      display: flex;
+      border: 4px solid #ffffff;
+      background: #000000;
+      border-radius: 20rem;
+      width: 10vh;
+      height: 10vh;
+      align-content: center;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      i {
+        font-size: 30px;
+        color: red;
+        cursor: pointer;
+      }
+    }
+
+    h1 {
+      margin: 0;
+      padding: 0;
+      user-select: none;
+      color: white;
+    }
+
+    .col-1 {
+      width: 45%;
+    }
+
+    .col-2 {
+      width: 25%;
+    }
+
+    .col>button,
+    .number {
+      width: 100%;
+      background: #1b140c;
+      border: 0px;
+      text-align: center;
+      display: flex;
+    }
+
+    .button {
+      font-family: sans-serif;
+      font-size: 2em;
+    }
+
+    #plus-btn {
+      color: #ffffff;
+      user-select: none;
+      outline: none;
+    }
+
+    #minus-btn {
+      color: #ffffff;
+      user-select: none;
+      outline: none;
+    }
+
+
+    .AdminProduct1 {
+
+      h2 {
+        font-size: 20px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+      }
+
+      h3 {
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: rgb(72, 96, 88);
+
+      }
+
+      width: 80%;
+
+      border: 1px solid black;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+
+      img {
+
+        width: 100px;
+        height: 100px;
+      }
+
+      #AdminProductsTexts1 {
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+
+        h4 {
+          font-size: 13px;
+          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+        }
+
+        #AdminProductH3 {
+          margin: 0;
+          font-weight: 600;
+        }
+
+        #AdminProductH4 {
+          margin: 0;
+        }
+
+        #AdminProductH61 {
+          width: 500px;
+          font-size: 20px;
+          margin: 0;
+        }
+      }
+
+      button {
+        color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  .total {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+
+
+    div {
+      gap: 20px;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      width: 25vh;
+      border: 1px solid black;
+      margin-top: 20px;
+      margin-bottom: 20px;
+
+      p {
+        font-size: 20px;
+      }
+
+      button {
+        width: 20vh;
+        height: 5vh;
+        color: rgb(255, 255, 255);
+        background-color: #1b140c;
+        cursor: pointer;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 848px) {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .AdminPanelProductsMain1 {
+      margin-top: 90px;
+      width: 90%;
+      margin-bottom: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      gap: 20px;
+      flex-wrap: wrap-reverse;
+
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+      // use only the available space inside the 400x400 frame
+
+
+
+
+      .container1 {
+        display: flex;
+        border: 4px solid #ffffff;
+        background: #000000;
+        border-radius: 20rem;
+        width: 7vh;
+        height: 7vh;
+        align-content: center;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        i {
+          font-size: 20px;
+          color: red;
+          cursor: pointer;
+        }
+      }
+
+      h1 {
+        margin: 0;
+        padding: 0;
+        user-select: none;
+        color: white;
+        text-align: center;
+
+      }
+
+      .col-1 {
+        width: 45%;
+      }
+
+      .col-2 {
+        width: 25%;
+      }
+
+      .col>button,
+      .number {
+        width: 100%;
+        background: #1b140c;
+        border: 0px;
+        text-align: center;
+        display: flex;
+      }
+
+      .button {
+        font-family: sans-serif;
+        font-size: 2em;
+      }
+
+      #plus-btn {
+        color: #ffffff;
+        user-select: none;
+        outline: none;
+      }
+
+      #minus-btn {
+        color: #ffffff;
+        user-select: none;
+        outline: none;
+      }
+
+
+      .AdminProduct1 {
+        width: 40vh;
+        flex-wrap: wrap;
+        border: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 44vh;
+        flex-direction: column;
+
+        h2 {
+          font-size: 20px;
+          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+          text-align: center;
+
+        }
+
+        h3 {
+          font-size: 20px;
+          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+          color: rgb(72, 96, 88);
+          text-align: center;
+
+        }
+
+
+
+
+        img {
+
+          width: 100px;
+          height: 100px;
+        }
+
+        #AdminProductsTexts1 {
+          display: flex;
+          flex-direction: column;
+          width: 80%;
+
+          h4 {
+            font-size: 13px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: center;
+
+          }
+
+          #AdminProductH3 {
+            margin: 0;
+            font-weight: 600;
+          }
+
+          #AdminProductH4 {
+            margin: 0;
+          }
+
+          #AdminProductH61 {
+            width: 500px;
+            font-size: 20px;
+            margin: 0;
+          }
+        }
+
+        button {
+          color: black;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+
+    .total {
+      width: 100%;
+      display: flex;
+      gap: 20px;
+      justify-content: flex-end;
+
+
+      div {
+        gap: 20px;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        width: 25vh;
+        border: 1px solid black;
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+        p {
+          font-size: 20px;
+        }
+
+        button {
+          width: 20vh;
+          height: 5vh;
+          color: rgb(255, 255, 255);
+          background-color: #1b140c;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

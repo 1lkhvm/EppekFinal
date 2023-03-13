@@ -114,10 +114,10 @@ export default function Provider({ children }) {
 		}
 	}
 
-	function clear(){
+	function clear() {
 		setBasket([])
 		setWishlist([])
-		
+
 	}
 
 	return (

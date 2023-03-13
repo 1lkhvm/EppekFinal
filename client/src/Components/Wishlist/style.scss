@@ -18,7 +18,7 @@
     h2 {
         text-align: center;
         font-size: 80px;
-        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
         color: black;
     }
 
@@ -38,11 +38,13 @@
 
 
         p {
-            font-size: 20px;
-            text-align: center;
-            font-weight: 600;
-            font-family: Arial, Helvetica, sans-serif;
-            color: white;
+
+            font-size: 50px !important;
+            font-family: auto !important;
+            font-weight: normal !important;
+            line-height: 60px !important;
+            color: #d1ff2b !important;
+
 
         }
 

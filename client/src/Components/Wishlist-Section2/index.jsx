@@ -1,28 +1,10 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { MainContext } from '../../contexts/Main'
-import Navbar from '../../Layouts/Navbar'
-import './style.scss'
+import './wishlist.scss'
 export default function Saf() {
 
-	// let minusBtn = document.getElementById("minus-btn");
-	// let count = document.getElementById("count");
-	// let plusBtn = document.getElementById("plus-btn");
 
-	// let countNum = 0;
-	// count.innerHTML = countNum;
-
-	// minusBtn.addEventListener("click", () => {
-	//     countNum -= 1;
-	//     count.innerHTML = countNum;
-	// });
-
-	// plusBtn.addEventListener("click", () => {
-	//     countNum += 1;
-	//     count.innerHTML = countNum;
-
-
-	// });
 
 
 	const { addToWishlist, wishlist, isInWishlist } = useContext(MainContext)
@@ -31,33 +13,31 @@ export default function Saf() {
 	return (
 		<>
 
-			<section className='AdminPanelProducts'>
-				<div className='AdminPanelProductsMain'>
+			<section className='AdminPanelProducts1'>
+				<div className='AdminPanelProductsMain1'>
 
 
 					{
 						wishlist.length == 0 &&
 						<div>
-							<p className="text"> Wow, you didn't like our page :(   </p>
-							<Link to='/products/pasta' >
-								Maybe pasta 
-							</Link>
-							<Link to='/products/farm' >
-								Maybe farm
+							<p className="text1"> Wow, you didn't like our page :(   </p>
+							<Link to='/products/cake' >
+								Maybe cake
 							</Link>
 						</div>
 					}
 					{
 						wishlist.map((i, j) => {
 							return (
-								<div className='AdminProduct'>
+								<div className='AdminProduct1'>
 									<img src={i.img} alt='foto' />
-									<div id='AdminProductsTexts'>
-										<h3 id='AdminProductH3'> ${i.title} </h3>
-										<h4 id='AdminProductH4'>$ {i.price} </h4>
-										<h6 id='AdminProductH6'></h6>
+
+									<h3 id='AdminProductH31'> {i.title} </h3>
+									<h6 id='AdminProductH61'><h2>{i.price} $ </h2></h6>
+									<div id='AdminProductsTexts1'>
+										<h4 id='AdminProductH41'> {i.description} </h4>
 									</div>
-									<div class="center container">
+									<div class="center container1">
 										<h4 className="card-btn-float btn" href="#0_n" title="Add Wishlist"
 											onClick={() => addToWishlist(i)} >
 											{isInWishlist(i) ?
@@ -67,7 +47,7 @@ export default function Saf() {
 											}
 										</h4>
 									</div>
-									{/* <button onClick={ () => remove(i) }  >X</button> */}
+
 								</div>
 							)
 						})

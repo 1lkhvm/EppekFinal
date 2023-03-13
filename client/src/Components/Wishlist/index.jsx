@@ -4,9 +4,9 @@ function Wishlist() {
     return (
         <>
             <div className='Wishlist-Container'>
-                <h2>WISHLIST</h2>
                 <div className='Wishlist'>
                     <div className='Wishlist-text-img'>
+                        <p>WISHLIST</p>
 
                     </div>
                 </div>

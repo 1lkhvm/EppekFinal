@@ -6,8 +6,11 @@ import Footer from '../../Layouts/Footer'
 import Navbar from '../../Layouts/Navbar'
 
 function Home() {
+
+
     return (
         <>
+
             <Navbar />
             <HomeSection1 />
             <HomeSection2 />
@@ -19,3 +22,6 @@ function Home() {
 }
 
 export default Home
+
+
+
