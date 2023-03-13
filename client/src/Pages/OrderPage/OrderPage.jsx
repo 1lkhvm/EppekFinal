@@ -5,7 +5,7 @@ import Navbar from '../../Layouts/Navbar'
 import './style.scss'
 function OrderPage() {
 
-	
+
 
 	const { increase, decrease, remove, basket } = useContext(MainContext)
 
@@ -54,7 +54,7 @@ function OrderPage() {
 									<button onClick={() => remove(i)}  >X</button>
 								</div>
 							)
-								
+
 						})
 					}
 					<div className='total'>
@@ -65,7 +65,7 @@ function OrderPage() {
 									sum = x.count * x.price
 								}
 								return <div style={{ marginTop: "20px" }} >
-									<p  >  	 {sum.toFixed(2)} $ +  {(sum * 0.35).toFixed(2)} KDV  </p>
+									<p  >  	 {sum.toFixed(2)} $ +  {(sum * 0.05).toFixed(2)} KDV  </p>
 									<p  >  	Total: {(1.35 * sum).toFixed(2)}   </p>
 									<button className='	button'>Add order</button>
 								</div>

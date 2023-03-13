@@ -9,11 +9,11 @@
     margin-bottom: 0px;
     position: fixed;
     display: flex;
-    height: 6em;
+    height: 8em;
     background-color: #1b140c;
     align-items: center;
     justify-content: space-around;
-    z-index: 10;
+    z-index: 11;
 
 
 }
@@ -28,7 +28,7 @@
     justify-content: flex-start;
     padding: 1em;
     align-items: center;
-    z-index: 11;
+    z-index: 12;
 }
 
 
@@ -59,7 +59,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 50px;
+        gap: 20px;
 
         li {
 
@@ -102,6 +102,7 @@
 
 .visible {
     display: inherit;
+    z-index: 11;
 }
 
 /* ----- animations--------- */
@@ -363,6 +364,7 @@
 
 @media only screen and (max-width: 1000px) {
 
+
     * {
         margin: 0;
         box-sizing: border-box;
@@ -376,8 +378,9 @@
         position: fixed;
         display: flex;
         width: 100%;
-        height: 5em;
+        height: 8em;
         background-color: #1b140c;
+
         align-items: center;
         justify-content: space-around;
 
@@ -395,7 +398,7 @@
 
     .burger-menu {
         position: relative;
-        height: 100%;
+        height: 12vh;
         width: 3em;
         display: flex;
         flex-direction: column;
@@ -415,27 +418,27 @@
 
     .menu {
         width: 40%;
-        height: 200%;
-        background-color: rgb(0, 0, 0);
-        position: absolute;
+        height: 200vh;
+        background-color: #1b140c;
+        position: fixed;
         top: 0;
         z-index: 5;
 
         .navbar-mobile-menu {
             display: flex;
             width: 100%;
-            height: 130vh;
+            height: 100vh;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 50px;
+
 
 
             li {
 
                 display: flex;
                 flex-direction: column;
-                gap: 50px;
+
 
                 .nav-listing-mobile {
                     text-align: center;
@@ -444,7 +447,7 @@
                     text-transform: none;
                     letter-spacing: 0.05em;
                     font-family: helvetica-w01-roman, helvetica-w02-roman, helvetica-lt-w10-roman, sans-serif;
-                    font-size: 25px;
+                    font-size: 15px;
                     color: #FFFFFF;
                     text-decoration: none;
                     cursor: pointer;
@@ -468,6 +471,7 @@
 
     .visible {
         display: inherit;
+        z-index: 11;
     }
 
     /* ----- animations--------- */
