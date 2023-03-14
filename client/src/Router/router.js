@@ -41,14 +41,15 @@ import PRODUCTADD_CAKE from "../Components/ADMIN/ADMINPRODUCT/PRODUCTADD_CAKE";
 import PRODUCTADD_PASTA from "../Components/ADMIN/ADMINPRODUCT/PRODUCTADD_PASTA";
 import OrderPage from "../Pages/OrderPage/OrderPage";
 import Products from '../Pages/Products/index'
+import Ordercomplete from "../Pages/SucsessfullOrder/sucsessfullorder";
 
 
 
 
 const router = createBrowserRouter([
     {
-        path : 'products/:category',
-        element : <Products />
+        path: 'products/:category',
+        element: <Products />
     },
     {
         path: "/",
@@ -211,10 +212,14 @@ const router = createBrowserRouter([
     /////////////////////////////////////////////////
     {
         path: '/orders',
-        element: <OrderPage/>
+        element: <OrderPage />
     },
 
-   
+    {
+        path: '/orderssucc',
+        element: <Ordercomplete />
+    },
+
 
 
 

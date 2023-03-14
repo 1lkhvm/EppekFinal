@@ -76,7 +76,7 @@ function OrderPage() {
 											<span>{(sum * 0.05).toFixed(2)}₼ Delivery </span>
 										</span>
 										<span className='span2'  >  	Total: {(1.05 * sum).toFixed(2)}   </span>
-										<Link to={"/sucsessfuly"}><button className='button-86'>Add order</button></Link>
+										<Link to={"/orderssucc"}><button className='button-86'>Add order</button></Link>
 									</div>
 								})()
 
