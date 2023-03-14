@@ -8,9 +8,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    height: auto;
 
     .AdminPanelProductsMain {
-        margin-top: 190px;
+        margin-top: 170px;
+        margin-bottom: 95px;
         width: 90%;
 
         display: flex;
@@ -532,7 +534,7 @@
                         flex-direction: column;
                         font-size: 19px;
 
-                        .span2 {    
+                        .span2 {
                             font-size: 20px;
                             color: #435407;
                         }

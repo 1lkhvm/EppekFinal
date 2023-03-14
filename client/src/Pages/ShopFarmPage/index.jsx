@@ -4,12 +4,17 @@ import Navbar from '../../Layouts/Navbar'
 import Footer from '../../Layouts/Footer'
 
 import Farm from '../../Components/ShopFarm'
+import { Helmet } from 'react-helmet'
 
 
 
 function ShopFarmPage() {
     return (
-        <>
+        <> <Helmet>
+            <meta charSet="utf-8" />
+            <title>Farm</title>
+
+        </Helmet>
             <Navbar />
             <ShopKargoSection1 />
             <Farm />

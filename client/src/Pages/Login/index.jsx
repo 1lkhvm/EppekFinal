@@ -6,6 +6,7 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import Navbar from '../../Layouts/Navbar'
 import Footer from '../../Layouts/Footer'
+import { Helmet } from 'react-helmet';
 function Login() {
 
    const [error, setError] = useState("")
@@ -29,6 +30,11 @@ function Login() {
 
    return (
       <>
+         <Helmet>
+            <meta charSet="utf-8" />
+            <title>Eppek Login</title>
+
+         </Helmet>
          <Navbar />
          <div>
             <section className='loginPage'>

@@ -1,9 +1,11 @@
 import React from 'react'
-import axios from   'axios'
+import axios from 'axios'
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import './style.scss'
+import { useNavigate } from 'react-router-dom';
 function ContactSection1() {
+    let navigate = useNavigate()
     return (
         <>
 
@@ -24,7 +26,9 @@ function ContactSection1() {
                                 email: Yup.string().email('Invalid email address').required('Required'),
                             })}
                             onSubmit={(values) => {
-                                axios.post("http://localhost:5000/api/message",values).then(values=' ')
+                                axios.post("http://localhost:5000/api/message", values).then(values = ' ')
+                                navigate("/")
+                                alert("Message Send")
                             }}
                         >
                             <Form>

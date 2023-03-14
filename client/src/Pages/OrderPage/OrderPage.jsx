@@ -5,6 +5,7 @@ import Navbar from '../../Layouts/Navbar'
 import Footer from '../../Layouts/Footer'
 
 import './style.scss'
+import { Helmet } from 'react-helmet'
 function OrderPage() {
 
 
@@ -14,6 +15,11 @@ function OrderPage() {
 
 	return (
 		<>
+			<Helmet>
+				<meta charSet="utf-8" />
+				<title>Eppek Order</title>
+
+			</Helmet>
 			<Navbar />
 
 			<section className='AdminPanelProducts'>
@@ -24,7 +30,7 @@ function OrderPage() {
 						basket.length == 0 &&
 						<div>
 							<p className="text"> Please, add item to basket before purchasing  </p>
-							
+
 							<Link to='/products/farm' >
 								Maybe farm
 							</Link>
