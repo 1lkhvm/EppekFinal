@@ -107,22 +107,31 @@
 .container {
     background-color: #231e35;
     width: 100%;
-    height: 100vh;
+    height: 130vh;
     flex-direction: column;
     gap: 20px;
-
     display: flex;
     justify-content: center;
     align-items: center;
 
 
-    table {
+    .table1 {
+        width: 170vh;
+
+        thead {
+            tr {
+                .th21 {
+                }
+            }
+        }
+
         tbody {
             tr {
                 .noBorderbtn {
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    width: 28vh !important;
                 }
 
                 .noBorderm {
@@ -135,7 +144,8 @@
         }
     }
 
-    .thtt {
+    .th {
+        width: 30vh;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -156,11 +166,11 @@ tr:nth-child(odd) {
 th {
     background-color: #342F44;
     color: white;
-    width: 33vh;
+    width: 20vh;
     box-sizing: border-box;
     height: 10vh;
 
-    
+
 
     .button-64 {
         align-items: center;

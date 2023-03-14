@@ -2,6 +2,8 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { MainContext } from '../../contexts/Main'
 import Navbar from '../../Layouts/Navbar'
+import Footer from '../../Layouts/Footer'
+
 import './style.scss'
 function OrderPage() {
 
@@ -22,9 +24,7 @@ function OrderPage() {
 						basket.length == 0 &&
 						<div>
 							<p className="text"> Please, add item to basket before purchasing  </p>
-							<Link to='/products/pasta' >
-								Maybe pasta
-							</Link>
+							
 							<Link to='/products/farm' >
 								Maybe farm
 							</Link>
@@ -35,10 +35,10 @@ function OrderPage() {
 							return (
 								<div className='AdminProduct'>
 									<img src={i.img} alt='foto' />
+									<h3 id='AdminProductH3'> {i.title} </h3>
+									<h6 id='AdminProductH6'> Price of one :   {i.price}₼ </h6>
 									<div id='AdminProductsTexts'>
-										<h3 id='AdminProductH3'> {i.title} </h3>
 										<h4 id='AdminProductH4'> {i.description} </h4>
-										<h6 id='AdminProductH6'> Price of one :  $ {i.price} </h6>
 									</div>
 									<div class="center container">
 										<div class="button col col-1">
@@ -51,31 +51,36 @@ function OrderPage() {
 											<button id="plus-btn" onClick={() => increase(i)} > + </button>
 										</div>
 									</div>
-									<button onClick={() => remove(i)}  >X</button>
+									<button className='button-86' onClick={() => remove(i)}  >X</button>
 								</div>
 							)
 
 						})
 					}
-					<div className='total'>
-						{
-							(() => {
-								let sum = 0
-								for (let x of basket) {
-									sum = x.count * x.price
-								}
-								return <div style={{ marginTop: "20px" }} >
-									<p  >  	 {sum.toFixed(2)} $ +  {(sum * 0.05).toFixed(2)} KDV  </p>
-									<p  >  	Total: {(1.35 * sum).toFixed(2)}   </p>
-									<button className='	button'>Add order</button>
-								</div>
-							})()
+					<div className='total-contanier'>
+						<div className='total'>
+							{
+								(() => {
+									let sum = 0
+									for (let x of basket) {
+										sum = x.count * x.price
+									}
+									return <div className style={{ marginTop: "20px" }} >
+										<span  >  	 {sum.toFixed(2)}₼ +
+											<span>{(sum * 0.05).toFixed(2)}₼ Delivery </span>
+										</span>
+										<span className='span2'  >  	Total: {(1.05 * sum).toFixed(2)}   </span>
+										<Link to={"/sucsessfuly"}><button className='button-86'>Add order</button></Link>
+									</div>
+								})()
 
-						}
-					</div>
+							}
+						</div></div>
+
 
 				</div>
 			</section>
+			<Footer />
 		</>
 	)
 }

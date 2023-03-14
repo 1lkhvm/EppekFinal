@@ -25,7 +25,7 @@ function HomeSection2() {
                             <div className='homesection2-bread-left'>
 
                                 <div className='homesection2-bread-left-text'>
-                                    <h2>EKMEĞİMİZİ NASIL ÜRETİYORUZ?</h2>
+                                    <h2>HOW DO WE PRODUCE OUR BREAD?</h2>
                                     <span>HER ŞEY TOHUMLA BAŞLIYOR!</span>
                                     <p>Ekmeğimizi eski ve yerel buğdayların taze olarak öğütülmüş unlarından üretiyoruz.</p>
                                     <p>Seçtiğimiz buğdayların her birinin bir hikayesi, kendine has tadı ve özellikleri var.</p>

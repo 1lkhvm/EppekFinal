@@ -42,7 +42,7 @@ function ADMINUSERS() {
     return (
         <div class="container">
             <div class="table-responsive">
-                <table class="table">
+                <table class="table1">
                     <thead>
                         <tr>
                             <th scope="col">Id</th>
@@ -50,7 +50,7 @@ function ADMINUSERS() {
                             <th scope="col">Email</th>
                             <th scope="col">CreateTime</th>
                             <th scope="col">UpdateTime</th>
-                            <th>DeleteAccount</th>
+                            <th className='th21'>DeleteAccount</th>
                         </tr>
                     </thead>
                     <tbody>
